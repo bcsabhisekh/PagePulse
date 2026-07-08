@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PagePulse</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brandIcon" src="icons/pagepulse-32.png" alt="" aria-hidden="true">
+          <div>
+            <p class="eyebrow">Local RAG</p>
+            <h1>PagePulse</h1>
+            <p id="pageMeta">Reading current tab...</p>
+          </div>
+        </div>
+        <span id="status" class="status">Idle</span>
+      </header>
+
+      <section class="pipeline" aria-label="Backend process">
+        <div class="pipelineHeader">
+          <span>Pipeline</span>
+          <span id="pipelineMeta">Idle</span>
+        </div>
+        <ol id="pipelineSteps" class="pipelineSteps"></ol>
+      </section>
+
+      <section id="messages" class="messages" aria-live="polite"></section>
+
+      <form id="chatForm" class="composer">
+        <textarea
+          id="questionInput"
+          rows="3"
+          placeholder="Ask anything about this page"
+          autocomplete="off"
+        ></textarea>
+        <div class="actions">
+          <button id="summaryButton" type="button" class="secondary">Summarize</button>
+          <button type="submit" class="primary">Ask</button>
+        </div>
+      </form>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

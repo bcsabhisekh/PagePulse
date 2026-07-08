@@ -9,4 +9,4 @@ dist/
 build/
 node_modules/
 .CHEATSHEET.md
-
+./output
